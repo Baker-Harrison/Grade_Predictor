@@ -18,7 +18,14 @@ private:
 	bool isEdited;
 public:
 	double getScore();
+	bool getIsCompleted();
+	bool getIsEdited();
+
+
+
 	void setScore(double newScore);
+
+
 };
 
 

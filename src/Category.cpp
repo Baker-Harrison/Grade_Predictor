@@ -8,7 +8,17 @@ void Category::addAssignment(Assignment assignment) {
 }
 
 vector<Assignment> Category::getCompletedAssignments() {
-	return nullptr;
+	vector<Assignment> completedAssignments;
+
+	for (Assignment assignment : assignments)
+	{
+		if (assignment.getIsCompleted())
+		{
+			completedAssignments.push_back(assignment);
+		}
+	}
+
+	return completedAssignments;
 }
 
 double Category::getCurrentGrade() {
@@ -16,7 +26,17 @@ double Category::getCurrentGrade() {
 }
 
 vector<Assignment> Category::getRemainingAssignments() {
-	return nullptr;
+	vector<Assignment> remainingAssignments;
+
+	for (Assignment assignment : assignments)
+	{
+		if (!assignment.getIsCompleted())
+		{
+			remainingAssignments.push_back(assignment);
+		}
+	}
+
+	return remainingAssignments;
 }
 
 double Category::getProjectedGrade() {
