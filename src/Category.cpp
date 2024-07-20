@@ -3,6 +3,23 @@
 //
 #include "../include/Category.h"
 
+
+
+Category::Category(string &Name, double &TotalWeight)
+{
+    name = Name;
+    totalWeight = TotalWeight;
+
+}
+
+
+
+vector<Assignment> Category::getAssignments()
+{
+    return assignments;
+}
+
+
 void Category::addAssignment(Assignment assignment) {
 
 }

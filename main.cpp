@@ -1,6 +1,17 @@
 #include <iostream>
+#include "include/FileManager.h"
 
+using namespace std;
 int main() {
-	std::cout << "Hello, World!" << std::endl;
+
+
+    FileManager manager;
+
+    string category = manager.getCategoryNameFromText("vnueguguergjgrtnbu!Homework");
+
+    cout << "Category: " << category << endl;
+
+    cout << "Hello, World!" << std::endl;
+
 	return 0;
 }

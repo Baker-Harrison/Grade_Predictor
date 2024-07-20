@@ -16,6 +16,8 @@ class FileManager
 public:
 	vector<Category> readAssignments(string fileName);
 	void writeAssignments(string fileName, vector<Category> categories);
+    string getCategoryNameFromText(const string& lineOfText);
+    double getCategoryWeightFromText(string lineOfText);
 
 };
 

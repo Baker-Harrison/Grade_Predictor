@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "Assignment.h"
+#include <vector>
 
 using namespace std;
 
@@ -17,6 +18,8 @@ private:
 	double totalWeight;
 	vector<Assignment> assignments;
 public:
+    Category(string &Name, double &TotalWeight);
+    vector<Assignment> getAssignments();
 	void addAssignment(Assignment assignment);
 	vector<Assignment> getCompletedAssignments();
 	double getCurrentGrade();
