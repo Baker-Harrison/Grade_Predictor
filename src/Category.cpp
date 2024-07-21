@@ -5,11 +5,20 @@
 
 
 
-Category::Category(string &Name, double &TotalWeight)
+Category::Category(string Name, double TotalWeight)
 {
     name = Name;
     totalWeight = TotalWeight;
 
+}
+
+string Category::getName()
+{
+	return name;
+}
+double Category::getTotalWeight()
+{
+	return totalWeight;
 }
 
 

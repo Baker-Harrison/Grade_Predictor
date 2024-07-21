@@ -18,7 +18,9 @@ private:
 	double totalWeight;
 	vector<Assignment> assignments;
 public:
-    Category(string &Name, double &TotalWeight);
+    Category(string Name, double TotalWeight);
+	string getName();
+	double getTotalWeight();
     vector<Assignment> getAssignments();
 	void addAssignment(Assignment assignment);
 	vector<Assignment> getCompletedAssignments();
