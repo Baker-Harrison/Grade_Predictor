@@ -1,15 +1,25 @@
 cmake_minimum_required(VERSION 3.28)
+
+# Add vcpkg integration
+
+# For mac
+set(CMAKE_TOOLCHAIN_FILE "/Users/harrisonbaker/vcpkg/scripts/buildsystems/vcpkg.cmake")
+
+# For windows
+# set(CMAKE_TOOLCHAIN_FILE "C:/Users/thehe/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "vcpkg toolchain file")
+
+
 project(Grade_Predictor)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-
-# Add vcpkg integration
-set(CMAKE_TOOLCHAIN_FILE "C:/Users/thehe/vcpkg/scripts/buildsystems/vcpkg.cmake")
-
+# Find the nlohmann_json package
 find_package(nlohmann_json CONFIG REQUIRED)
 
-add_executable(Grade_Predictor main.cpp
+# Add executable target
+add_executable(Grade_Predictor
+        main.cpp
         src/Assignment.cpp
         include/Assignment.h
         include/GradePrediction.h
@@ -19,6 +29,8 @@ add_executable(Grade_Predictor main.cpp
         include/FileManager.h
         src/FileManager.cpp
         include/ConsoleManager.h
-        src/ConsoleManager.cpp)
+        src/ConsoleManager.cpp
+)
 
+# Link the nlohmann_json library to the executable
 target_link_libraries(Grade_Predictor PRIVATE nlohmann_json::nlohmann_json)

@@ -20,7 +20,7 @@ class FileManager
 
 
 public:
-    const string FILENAME = "C:/Users/thehe/CLionProjects/CPP/Grade_Predictor/src/Text Files/categories.json";
+    const string FILENAME = "/Users/harrisonbaker/CLionProjects/Grade_Predictor/src/Text Files/categories.json";
 
 
     void addCategoryToFile(const string& FILENAME, const string& categoryName, double totalWeight);
