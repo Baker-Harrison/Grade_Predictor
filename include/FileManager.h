@@ -7,17 +7,24 @@
 
 #include "Category.h"
 #include <vector>
+#include <nlohmann/json.hpp>
+
+using json = nlohmann::json;
 
 using namespace std;
 
 class FileManager
 {
 
+    static const string FILENAME;
+
+
 public:
-	vector<Category> readAssignments(string fileName);
-	void writeAssignments(string fileName, vector<Category> categories);
-    string getCategoryNameFromText(const string& lineOfText);
-    double getCategoryWeightFromText(string lineOfText);
+    static void addCategoryToFile( const string& categoryName, double totalWeight);
+    static void addAssignmentToCategory( const string& categoryName, const json& newAssignment);
+    static vector<Category> readCategoriesAndAssignments() ;
+	// void writeAssignments(string fileName, vector<Category> categories);
+
 
 };
 

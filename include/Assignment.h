@@ -17,13 +17,18 @@ private:
 	bool isCompleted;
 	bool isEdited;
 public:
-	double getScore();
-	bool getIsCompleted();
-	bool getIsEdited();
+    Assignment(string Name, double PointsAchieved, double PointsPossible, bool IsCompleted, bool IsEdited);
+    string getName() const;
+    double getPointsAchieved() const;
+    double getPointsPossible() const;
+	double getScore() const;
+	bool getIsCompleted() const;
+	bool getIsEdited() const;
 
 
 
 	void setScore(double newScore);
+
 
 
 };

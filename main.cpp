@@ -1,6 +1,7 @@
 #include <iostream>
 #include "include/FileManager.h"
 #include "include/Category.h"
+#include <vector>
 
 using namespace std;
 int main() {
@@ -8,17 +9,23 @@ int main() {
 
     FileManager manager;
 
-    string category = manager.getCategoryNameFromText("vnueguguergjgrtnbu!Homework");
 
-    cout << "Category: " << category << endl;
 
-    cout << "Hello, World!" << std::endl;
 
-	vector<Category> categories = manager.readAssignments("/Users/harrisonbaker/CLionProjects/Grade_Predictor/src/Text Files/categories.txt");
 
+	vector<Category> categories = FileManager::readCategoriesAndAssignments();
+
+    FileManager::addCategoryToFile( "Test Category", 0.1);
+    FileManager::addAssignmentToCategory( "Test Category", "Test Assignment");
+
+    cout << "Number of categories: " << categories.size() << endl;
 	for (Category category: categories)
 	{
-		cout << category.getName() << endl;
+		cout << "Category Name: " << category.getName() << endl;
+        cout << "Category Weight: " << category.getTotalWeight() << endl;
+
+
+
 	}
 
 	return 0;

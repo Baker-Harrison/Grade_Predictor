@@ -30,7 +30,7 @@ vector<Assignment> Category::getAssignments()
 
 
 void Category::addAssignment(Assignment assignment) {
-
+    assignments.push_back(assignment);
 }
 
 vector<Assignment> Category::getCompletedAssignments() {
