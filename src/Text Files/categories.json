@@ -1,79 +1,79 @@
 {
     "categories": [
         {
+            "name": "Homework",
+            "totalWeight": 0.3,
             "assignments": [
                 {
-                    "isCompleted": true,
-                    "isEdited": false,
                     "name": "Assignment1",
                     "pointsAchieved": 85.0,
-                    "pointsPossible": 100.0
+                    "pointsPossible": 100.0,
+                    "isCompleted": true,
+                    "isEdited": false
                 },
                 {
-                    "isCompleted": true,
-                    "isEdited": false,
                     "name": "Assignment2",
                     "pointsAchieved": 90.0,
-                    "pointsPossible": 100.0
+                    "pointsPossible": 100.0,
+                    "isCompleted": true,
+                    "isEdited": false
                 }
-            ],
-            "name": "Homework",
-            "totalWeight": 0.3
+            ]
         },
         {
+            "name": "Exams",
+            "totalWeight": 0.5,
             "assignments": [
                 {
-                    "isCompleted": true,
-                    "isEdited": false,
                     "name": "Midterm",
                     "pointsAchieved": 75.0,
-                    "pointsPossible": 100.0
+                    "pointsPossible": 100.0,
+                    "isCompleted": true,
+                    "isEdited": false
                 },
                 {
-                    "isCompleted": false,
-                    "isEdited": false,
                     "name": "Final",
                     "pointsAchieved": 0.0,
-                    "pointsPossible": 100.0
+                    "pointsPossible": 100.0,
+                    "isCompleted": false,
+                    "isEdited": false
                 }
-            ],
-            "name": "Exams",
-            "totalWeight": 0.5
+            ]
         },
         {
+            "name": "Projects",
+            "totalWeight": 0.2,
             "assignments": [
                 {
-                    "isCompleted": false,
-                    "isEdited": false,
                     "name": "Project1",
                     "pointsAchieved": 0.0,
-                    "pointsPossible": 100.0
+                    "pointsPossible": 100.0,
+                    "isCompleted": false,
+                    "isEdited": false
                 },
                 {
-                    "isCompleted": false,
-                    "isEdited": false,
                     "name": "Project2",
                     "pointsAchieved": 0.0,
-                    "pointsPossible": 100.0
+                    "pointsPossible": 100.0,
+                    "isCompleted": false,
+                    "isEdited": false
                 }
-            ],
-            "name": "Projects",
-            "totalWeight": 0.2
+            ]
         },
         {
+            "name": "Test Category",
+            "totalWeight": 0.3,
             "assignments": [
                 "Test Assignment",
                 "Test Assignment",
                 "Test Assignment",
                 "Test Assignment"
-            ],
-            "name": "Test Category",
-            "totalWeight": 0.3
+            ]
         },
         {
-            "assignments": [],
             "name": "Test Category",
-            "totalWeight": 0.1
+            "totalWeight": 0.1,
+            "assignments": []
         }
     ]
 }

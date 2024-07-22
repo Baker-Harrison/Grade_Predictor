@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.28)
-
-# Add vcpkg integration
+project(Grade_Predictor)
 
 # For mac
 set(CMAKE_TOOLCHAIN_FILE "/Users/harrisonbaker/vcpkg/scripts/buildsystems/vcpkg.cmake")
@@ -8,11 +7,7 @@ set(CMAKE_TOOLCHAIN_FILE "/Users/harrisonbaker/vcpkg/scripts/buildsystems/vcpkg.
 # For windows
 # set(CMAKE_TOOLCHAIN_FILE "C:/Users/thehe/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "vcpkg toolchain file")
 
-
-project(Grade_Predictor)
-
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find the nlohmann_json package
 find_package(nlohmann_json CONFIG REQUIRED)
