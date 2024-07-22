@@ -28,6 +28,34 @@ vector<Assignment> Category::getAssignments()
     return assignments;
 }
 
+int Category::getNumberOfAssignmentsCompleted()
+{
+    int numOfAssignmentsCompleted = 0;
+    for (Assignment assignment : assignments)
+    {
+        if (assignment.getIsCompleted())
+        {
+            numOfAssignmentsCompleted++;
+        }
+    }
+
+    return numOfAssignmentsCompleted;
+}
+
+
+int Category::getNumberOfAssignmentsRemaining()
+{
+    int numOfAssignmentsRemaining = 0;
+    for (Assignment assignment : assignments)
+    {
+        if (!assignment.getIsCompleted())
+        {
+            numOfAssignmentsRemaining++;
+        }
+    }
+
+    return numOfAssignmentsRemaining;
+}
 
 void Category::addAssignment(Assignment assignment) {
     assignments.push_back(assignment);

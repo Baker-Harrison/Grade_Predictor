@@ -62,20 +62,13 @@
         },
         {
             "assignments": [
+                "Test Assignment",
+                "Test Assignment",
+                "Test Assignment",
                 "Test Assignment"
             ],
             "name": "Test Category",
-            "totalWeight": 100.0
-        },
-        {
-            "assignments": [],
-            "name": "Test Category",
-            "totalWeight": 100.0
-        },
-        {
-            "assignments": [],
-            "name": "Test Category",
-            "totalWeight": 0.1
+            "totalWeight": 0.3
         },
         {
             "assignments": [],

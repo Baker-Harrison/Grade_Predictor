@@ -16,13 +16,16 @@ using namespace std;
 class FileManager
 {
 
-    static const string FILENAME;
+
 
 
 public:
-    static void addCategoryToFile( const string& categoryName, double totalWeight);
-    static void addAssignmentToCategory( const string& categoryName, const json& newAssignment);
-    static vector<Category> readCategoriesAndAssignments() ;
+    const string FILENAME = "C:/Users/thehe/CLionProjects/CPP/Grade_Predictor/src/Text Files/categories.json";
+
+
+    void addCategoryToFile(const string& FILENAME, const string& categoryName, double totalWeight);
+    void addAssignmentToCategory(const string& FILENAME, const string& categoryName, const json& newAssignment);
+    vector<Category> readCategoriesAndAssignments(const string& FILENAME) ;
 	// void writeAssignments(string fileName, vector<Category> categories);
 
 

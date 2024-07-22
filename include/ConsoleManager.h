@@ -9,6 +9,7 @@
 
 class ConsoleManager
 {
+public:
 	void displayCategorySummary(vector<Category> categories);
 	void displayCategoryDetails(Category category);
 	string getUserInput(string prompt);
@@ -17,14 +18,4 @@ class ConsoleManager
 
 #endif //GRADE_PREDICTOR_CONSOLEMANAGER_H
 
-void ConsoleManager::displayCategorySummary(vector<Category> categories) {
 
-}
-
-void ConsoleManager::displayCategoryDetails(Category category) {
-
-}
-
-string ConsoleManager::getUserInput(string prompt) {
-	return std::string();
-}

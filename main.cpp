@@ -1,6 +1,7 @@
 #include <iostream>
 #include "include/FileManager.h"
 #include "include/Category.h"
+#include "include/ConsoleManager.h"
 #include <vector>
 
 using namespace std;
@@ -9,24 +10,15 @@ int main() {
 
     FileManager manager;
 
+    ConsoleManager console;
 
 
 
+	vector<Category> categories = manager.readCategoriesAndAssignments(manager.FILENAME);
 
-	vector<Category> categories = FileManager::readCategoriesAndAssignments();
-
-    FileManager::addCategoryToFile( "Test Category", 0.1);
-    FileManager::addAssignmentToCategory( "Test Category", "Test Assignment");
 
     cout << "Number of categories: " << categories.size() << endl;
-	for (Category category: categories)
-	{
-		cout << "Category Name: " << category.getName() << endl;
-        cout << "Category Weight: " << category.getTotalWeight() << endl;
-
-
-
-	}
+	console.displayCategorySummary(categories);
 
 	return 0;
 }

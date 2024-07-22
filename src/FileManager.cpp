@@ -5,12 +5,13 @@
 #include <iostream>
 #include "../include/FileManager.h"
 #include  <nlohmann/json.hpp>
+#include <vector>
 using namespace std;
 using json = nlohmann::json;
 
-const string FileManager::FILENAME = "C:\\Users\\thehe\\CLionProjects\\CPP\\Grade_Predictor\\src\\Text Files\\categories.json";
 
-void FileManager::addCategoryToFile(const string& categoryName, double totalWeight) {
+
+void FileManager::addCategoryToFile(const string& FILENAME, const string& categoryName, double totalWeight) {
     fstream file(FILENAME, ios::in | ios::out | ios::binary);
     if (!file.is_open()) {
         cout << "Failed to open file" << endl;
@@ -48,7 +49,7 @@ void FileManager::addCategoryToFile(const string& categoryName, double totalWeig
 }
 
 
-void FileManager::addAssignmentToCategory(const string& categoryName, const json& newAssignment) {
+void FileManager::addAssignmentToCategory(const string& FILENAME, const string& categoryName, const json& newAssignment) {
     fstream file(FILENAME, ios::in | ios::out | ios::binary);
     if (!file.is_open()) {
         cout << "Failed to open file" << endl;
@@ -95,37 +96,57 @@ void FileManager::addAssignmentToCategory(const string& categoryName, const json
 
 
 
-vector<Category> FileManager::readCategoriesAndAssignments() {
+vector<Category> FileManager::readCategoriesAndAssignments(const string& FILENAME) {
     vector<Category> categories;
 
     ifstream categoriesFile(FILENAME);
     if (!categoriesFile.is_open()) {
         cout << "Invalid file" << endl;
-        exit(0);
+        return categories;
     }
 
     json jsonData;
     categoriesFile >> jsonData;
 
+    // Check if the JSON object is an object
+    if (!jsonData.is_object()) {
+        cout << "Invalid JSON data" << endl;
+        return categories;
+    }
+
     // Read categories and assignments from JSON data
-    for (const auto& categoryJson : jsonData["categories"]) {
-        string categoryName = categoryJson["name"];
-        double categoryWeight = categoryJson["totalWeight"];
+    if (jsonData.contains("categories")) {
+        const json& categoriesArray = jsonData["categories"];
+        if (categoriesArray.is_array()) {
+            for (const auto& categoryJson : categoriesArray) {
+                if (categoryJson.is_object()) {
+                    string categoryName = categoryJson["name"];
+                    double categoryWeight = categoryJson["totalWeight"];
 
-        Category category(categoryName, categoryWeight);
+                    Category category(categoryName, categoryWeight);
 
-        for (const auto& assignmentJson : categoryJson["assignments"]) {
-            string assignmentName = assignmentJson["name"];
-            double pointsAchieved = assignmentJson["pointsAchieved"];
-            double pointsPossible = assignmentJson["pointsPossible"];
-            bool isCompleted = assignmentJson["isCompleted"];
-            bool isEdited = assignmentJson["isEdited"];
+                    if (categoryJson.contains("assignments")) {
+                        const json& assignmentsArray = categoryJson["assignments"];
+                        if (assignmentsArray.is_array()) {
+                            for (const auto& assignmentJson : assignmentsArray) {
+                                if (assignmentJson.is_object()) {
+                                    string assignmentName = assignmentJson["name"];
+                                    double pointsAchieved = assignmentJson["pointsAchieved"];
+                                    double pointsPossible = assignmentJson["pointsPossible"];
+                                    bool isCompleted = assignmentJson["isCompleted"];
+                                    bool isEdited = assignmentJson["isEdited"];
 
-            Assignment assignment(assignmentName, pointsAchieved, pointsPossible, isCompleted, isEdited);
-            category.addAssignment(assignment);
+                                    Assignment assignment(assignmentName, pointsAchieved, pointsPossible, isCompleted, isEdited);
+                                    category.addAssignment(assignment);
+                                }
+                            }
+                        }
+                    }
+
+                    categories.push_back(category);
+                }
+            }
         }
-
-        categories.push_back(category);
     }
 
     categoriesFile.close();

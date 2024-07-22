@@ -22,6 +22,8 @@ public:
 	string getName();
 	double getTotalWeight();
     vector<Assignment> getAssignments();
+    int getNumberOfAssignmentsCompleted();
+    int getNumberOfAssignmentsRemaining();
 	void addAssignment(Assignment assignment);
 	vector<Assignment> getCompletedAssignments();
 	double getCurrentGrade();
