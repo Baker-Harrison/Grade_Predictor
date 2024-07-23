@@ -8,6 +8,7 @@
 #include "Category.h"
 #include <vector>
 #include <nlohmann/json.hpp>
+#include "Assignment.h"
 
 using json = nlohmann::json;
 
@@ -24,9 +25,9 @@ public:
 
 
     void addCategoryToFile(const string& FILENAME, const string& categoryName, double totalWeight);
-    void addAssignmentToCategory(const string& FILENAME, const string& categoryName, const json& newAssignment);
+    void addAssignmentToCategory(const string& FILENAME, const string& categoryName, const Assignment& newAssignment);
     vector<Category> readCategoriesAndAssignments(const string& FILENAME) ;
-	// void writeAssignments(string fileName, vector<Category> categories);
+	void editAssignment(string fileName, Category category, string assignmentName, double newScore);
 
 
 };

@@ -1,79 +1,91 @@
 {
     "categories": [
         {
-            "name": "Homework",
-            "totalWeight": 0.3,
             "assignments": [
                 {
+                    "isCompleted": true,
+                    "isEdited": false,
                     "name": "Assignment1",
                     "pointsAchieved": 85.0,
-                    "pointsPossible": 100.0,
-                    "isCompleted": true,
-                    "isEdited": false
+                    "pointsPossible": 100.0
                 },
                 {
+                    "isCompleted": true,
+                    "isEdited": false,
                     "name": "Assignment2",
                     "pointsAchieved": 90.0,
-                    "pointsPossible": 100.0,
-                    "isCompleted": true,
-                    "isEdited": false
+                    "pointsPossible": 100.0
+                },
+                {
+                    "isCompleted": false,
+                    "isEdited": false,
+                    "name": "",
+                    "pointsAchieved": 0.0,
+                    "pointsPossible": 40.0
                 }
-            ]
+            ],
+            "name": "Homework",
+            "totalWeight": 0.3
         },
         {
-            "name": "Exams",
-            "totalWeight": 0.5,
             "assignments": [
                 {
+                    "isCompleted": true,
+                    "isEdited": false,
                     "name": "Midterm",
                     "pointsAchieved": 75.0,
-                    "pointsPossible": 100.0,
-                    "isCompleted": true,
-                    "isEdited": false
+                    "pointsPossible": 100.0
                 },
                 {
-                    "name": "Final",
-                    "pointsAchieved": 0.0,
-                    "pointsPossible": 100.0,
                     "isCompleted": false,
-                    "isEdited": false
+                    "isEdited": true,
+                    "name": "Final",
+                    "pointsAchieved": 200.0,
+                    "pointsPossible": 100.0
+                },
+                {
+                    "isCompleted": false,
+                    "isEdited": true,
+                    "name": "ExitTicket",
+                    "pointsAchieved": 40.0,
+                    "pointsPossible": 40.0
                 }
-            ]
+            ],
+            "name": "Exams",
+            "totalWeight": 0.5
         },
         {
-            "name": "Projects",
-            "totalWeight": 0.2,
             "assignments": [
                 {
+                    "isCompleted": false,
+                    "isEdited": false,
                     "name": "Project1",
                     "pointsAchieved": 0.0,
-                    "pointsPossible": 100.0,
-                    "isCompleted": false,
-                    "isEdited": false
+                    "pointsPossible": 100.0
                 },
                 {
+                    "isCompleted": false,
+                    "isEdited": false,
                     "name": "Project2",
                     "pointsAchieved": 0.0,
-                    "pointsPossible": 100.0,
-                    "isCompleted": false,
-                    "isEdited": false
+                    "pointsPossible": 100.0
                 }
-            ]
+            ],
+            "name": "Projects",
+            "totalWeight": 0.2
         },
         {
-            "name": "Test Category",
-            "totalWeight": 0.3,
             "assignments": [
-                "Test Assignment",
-                "Test Assignment",
-                "Test Assignment",
-                "Test Assignment"
-            ]
-        },
-        {
-            "name": "Test Category",
-            "totalWeight": 0.1,
-            "assignments": []
+                {
+                    "isCompleted": false,
+                    "isEdited": false,
+                    "name": "",
+                    "pointsAchieved": 0.0,
+                    "pointsPossible": 40.0
+                }
+            ],
+            "name": "Test",
+            "totalWeight": 0.5
         }
     ]
 }

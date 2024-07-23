@@ -105,3 +105,20 @@ void Category::editAssignment(string assignmentName, double newScore) {
 
 }
 
+
+void Category::setTotalPointsAchieved(double totalPoints)
+{
+	totalPointsAchieved = totalPoints;
+}
+void Category::setTotalPointsPossible(double totalPoints)
+{
+	totalPointsPossible = totalPoints;
+}
+double Category::getTotalPointsAchieved()
+{
+	return totalPointsAchieved;
+}
+double Category::getTotalPointsPossible()
+{
+	return totalPointsPossible;
+}

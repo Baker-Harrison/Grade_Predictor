@@ -6,13 +6,22 @@
 #define GRADE_PREDICTOR_CONSOLEMANAGER_H
 
 #include "Category.h"
+#include "FileManager.h"
+#include "Assignment.h"
 
 class ConsoleManager
 {
 public:
-	void displayCategorySummary(vector<Category> categories);
-	void displayCategoryDetails(Category category);
-	string getUserInput(string prompt);
+	void displayCategorySummary();
+	void printCategories();
+	void displayCategoryDetails();
+	void createNewCategory();
+	void createNewAssignment();
+	void editAssignment();
+
+	void menu();
+	FileManager manager;
+	vector<Category> categories = manager.readCategoriesAndAssignments(manager.FILENAME);
 };
 
 
