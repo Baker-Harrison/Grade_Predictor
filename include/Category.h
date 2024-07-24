@@ -17,8 +17,8 @@ private:
 	string name;
 	double totalWeight;
 	vector<Assignment> assignments;
-	double totalPointsAchieved;
-	double totalPointsPossible;
+	double totalPointsAchieved = 0;
+	double totalPointsPossible = 0;
 public:
     Category(string Name, double TotalWeight);
 	string getName();
@@ -37,7 +37,7 @@ public:
 	void setTotalPointsAchieved(double totalPoints);
 	void setTotalPointsPossible(double totalPoints);
 
-	double getTotalPointsAchieved();
+	double getTotalPointsAchieved() const;
 	double getTotalPointsPossible();
 };
 

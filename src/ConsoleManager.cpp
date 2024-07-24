@@ -26,8 +26,10 @@ void ConsoleManager::displayCategorySummary() {
         cout << "Category Name: " << category.getName() << endl;
         cout << "Total Weight: " << category.getTotalWeight() << endl;
         cout << "Assignments Completed: " << category.getNumberOfAssignmentsCompleted() << endl;
-        // get current grade
+	    cout << "Grade: " << category.getCurrentGrade() << "%" << endl;
         cout << "Assignments Remaining: " << category.getNumberOfAssignmentsRemaining() << endl;
+		cout << "Projected Grade: " << category.getProjectedGrade() << "%" << endl;
+
         cout << "------------------------------------" << endl;
     }
 }
@@ -171,6 +173,7 @@ void ConsoleManager::editAssignment()
 			{
 				if (assignmentName == assignment.getName())
 				{
+					cout << "Total score possible: " << assignment.getPointsPossible() << endl;
 					cout << "Enter the new score: ";
 					double newScore;
 					cin >> newScore;

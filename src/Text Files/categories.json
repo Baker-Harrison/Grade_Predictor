@@ -40,7 +40,7 @@
                     "isCompleted": false,
                     "isEdited": true,
                     "name": "Final",
-                    "pointsAchieved": 200.0,
+                    "pointsAchieved": 100.0,
                     "pointsPossible": 100.0
                 },
                 {
@@ -58,9 +58,9 @@
             "assignments": [
                 {
                     "isCompleted": false,
-                    "isEdited": false,
+                    "isEdited": true,
                     "name": "Project1",
-                    "pointsAchieved": 0.0,
+                    "pointsAchieved": 90.0,
                     "pointsPossible": 100.0
                 },
                 {
@@ -79,7 +79,7 @@
                 {
                     "isCompleted": false,
                     "isEdited": false,
-                    "name": "",
+                    "name": "Test Assignment",
                     "pointsAchieved": 0.0,
                     "pointsPossible": 40.0
                 }
