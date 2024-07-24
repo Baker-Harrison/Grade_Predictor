@@ -27,7 +27,7 @@ public:
     void addCategoryToFile(const string& FILENAME, const string& categoryName, double totalWeight);
     void addAssignmentToCategory(const string& FILENAME, const string& categoryName, const Assignment& newAssignment);
     vector<Category> readCategoriesAndAssignments(const string& FILENAME) ;
-	void editAssignment(string fileName, Category category, string assignmentName, double newScore);
+	void editAssignment(string fileName, Category category, string assignmentName, double newScore, string newAssignmentName, bool isCompleted);
 
 
 };

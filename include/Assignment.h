@@ -27,7 +27,11 @@ public:
 
 
 
+
 	void setScore(double newScore);
+	void setName(string newName);
+	void setIsEdited(bool newIsEdited);
+	void setIsCompleted(bool newIsCompleted);
 
 
 

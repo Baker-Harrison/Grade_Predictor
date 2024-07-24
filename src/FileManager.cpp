@@ -167,7 +167,7 @@ vector<Category> FileManager::readCategoriesAndAssignments(const string& FILENAM
 
 
 
-void FileManager::editAssignment(std::string fileName, Category category, std::string assignmentName, double newScore)
+void FileManager::editAssignment(std::string fileName, Category category, std::string assignmentName, double newScore, string newAssignmentName, bool isCompleted)
 {
 	std::ifstream inFile(fileName);
 	json j;
@@ -194,6 +194,8 @@ void FileManager::editAssignment(std::string fileName, Category category, std::s
 						return;
 					}
 					assignment["pointsAchieved"] = newScore;
+					assignment["name"] = newAssignmentName;
+					assignment["isCompleted"] = isCompleted;
 					assignment["isEdited"] = true;
 					foundAssignment = true;
 					break;

@@ -134,6 +134,10 @@ void ConsoleManager::displayCategoryDetails()
 			category.setTotalPointsPossible(totalPointsPossible);
 			cout << "------------------------------------" << endl;
 			cout << "Total points: " << category.getTotalPointsPossible() << endl;
+			cout << "Unfinished assignments: " << category.getNumberOfAssignmentsRemaining() << endl;
+			cout << "Expected score on unfinished assignments: " << category.getProjectedGrade() << "%" << endl;
+			cout << "Predicted Final category Grade: " << category.calculatePredictedGrade() << "%" << endl;
+
 
 
 			break;
@@ -181,7 +185,28 @@ void ConsoleManager::editAssignment()
 					cout << "Enter the new score: ";
 					double newScore;
 					cin >> newScore;
-					manager.editAssignment(manager.FILENAME, category, assignmentName, newScore);
+
+					//  add an option to edit the name of the assignment
+					string newName;
+					cout << "Enter a new name for the assignment or enter none to keep the old name: ";
+
+					cin >> newName;
+					if (newName != "none") {
+						assignment.setName(newName);
+					}
+					else{}
+					// add an option to set complete
+					char isCompleted;
+					cout << "is the assignment completed? (y/n): ";
+
+					cin >> isCompleted;
+					if (isCompleted == 'y')
+					{
+						assignment.setIsCompleted(true);
+					}
+
+
+					manager.editAssignment(manager.FILENAME, category, assignmentName, newScore, newName, isCompleted);
 
 				}
 			}

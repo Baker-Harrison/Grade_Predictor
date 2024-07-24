@@ -184,3 +184,4 @@ double Category::getTotalPointsPossible()
 {
 	return totalPointsPossible;
 }
+

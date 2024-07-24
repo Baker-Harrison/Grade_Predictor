@@ -44,5 +44,16 @@ void Assignment::setScore(double newScore) {
 }
 
 
+void Assignment::setName(string newName) {
+	name = newName;
+}
 
 
+void Assignment::setIsEdited(bool newIsEdited) {
+	isEdited = newIsEdited;
+}
+
+
+void Assignment::setIsCompleted(bool newIsCompleted) {
+	isCompleted = newIsCompleted;
+}
