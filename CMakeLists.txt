@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.28)
 project(Grade_Predictor)
 
-# For mac
+# For mac (Enter your own path)
 set(CMAKE_TOOLCHAIN_FILE "/Users/harrisonbaker/vcpkg/scripts/buildsystems/vcpkg.cmake")
 
-# For windows
+# For windows (Enter your own path) -->
 # set(CMAKE_TOOLCHAIN_FILE "C:/Users/thehe/vcpkg/scripts/buildsystems/vcpkg.cmake" CACHE STRING "vcpkg toolchain file")
 
 set(CMAKE_CXX_STANDARD 17)

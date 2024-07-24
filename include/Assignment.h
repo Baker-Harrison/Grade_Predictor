@@ -12,8 +12,8 @@ using namespace std;
 class Assignment {
 private:
 	string name;
-	double pointsAchieved;
-	double pointsPossible;
+	double pointsAchieved = 0;
+	double pointsPossible = 0;
 	bool isCompleted;
 	bool isEdited;
 public:

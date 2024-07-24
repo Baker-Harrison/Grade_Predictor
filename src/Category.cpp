@@ -160,6 +160,11 @@ double Category::calculatePredictedGrade() {
 	}
 
 	// Return the predicted grade as a percentage
+	if (totalProjectedPoints / totalPointsPossible* 100.0 == NAN)
+	{
+		return 0.0;
+	}
+
 	return (totalProjectedPoints / totalPointsPossible) * 100.0;
 }
 

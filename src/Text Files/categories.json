@@ -49,6 +49,13 @@
                     "name": "ExitTicket",
                     "pointsAchieved": 0.0,
                     "pointsPossible": 40.0
+                },
+                {
+                    "isCompleted": true,
+                    "isEdited": true,
+                    "name": "none",
+                    "pointsAchieved": 90.0,
+                    "pointsPossible": 100.0
                 }
             ],
             "name": "Exams",
@@ -67,7 +74,7 @@
                     "isCompleted": false,
                     "isEdited": false,
                     "name": "Project2",
-                    "pointsAchieved": 0.0,
+                    "pointsAchieved": 100.0,
                     "pointsPossible": 100.0
                 }
             ],
@@ -87,7 +94,7 @@
                     "isCompleted": false,
                     "isEdited": false,
                     "name": "Test Assignment",
-                    "pointsAchieved": 0.0,
+                    "pointsAchieved": 40.0,
                     "pointsPossible": 40.0
                 }
             ],
