@@ -6,14 +6,14 @@
                     "isCompleted": true,
                     "isEdited": false,
                     "name": "Assignment1",
-                    "pointsAchieved": 85.0,
+                    "pointsAchieved": 0.0,
                     "pointsPossible": 100.0
                 },
                 {
                     "isCompleted": true,
                     "isEdited": false,
                     "name": "Assignment2",
-                    "pointsAchieved": 90.0,
+                    "pointsAchieved": 0.0,
                     "pointsPossible": 100.0
                 },
                 {
@@ -33,21 +33,21 @@
                     "isCompleted": true,
                     "isEdited": false,
                     "name": "Midterm",
-                    "pointsAchieved": 75.0,
+                    "pointsAchieved": 0.0,
                     "pointsPossible": 100.0
                 },
                 {
                     "isCompleted": false,
                     "isEdited": true,
                     "name": "Final",
-                    "pointsAchieved": 100.0,
+                    "pointsAchieved": 0.0,
                     "pointsPossible": 100.0
                 },
                 {
                     "isCompleted": false,
                     "isEdited": true,
                     "name": "ExitTicket",
-                    "pointsAchieved": 40.0,
+                    "pointsAchieved": 0.0,
                     "pointsPossible": 40.0
                 }
             ],
@@ -60,7 +60,7 @@
                     "isCompleted": false,
                     "isEdited": true,
                     "name": "Project1",
-                    "pointsAchieved": 90.0,
+                    "pointsAchieved": 0.0,
                     "pointsPossible": 100.0
                 },
                 {

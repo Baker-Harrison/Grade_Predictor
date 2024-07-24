@@ -9,6 +9,7 @@
 // include the FileeManager header file
 
 #include "../include/FileManager.h"
+#include "../include/GradePrediction.h"
 
 
 
@@ -28,10 +29,13 @@ void ConsoleManager::displayCategorySummary() {
         cout << "Assignments Completed: " << category.getNumberOfAssignmentsCompleted() << endl;
 	    cout << "Grade: " << category.getCurrentGrade() << "%" << endl;
         cout << "Assignments Remaining: " << category.getNumberOfAssignmentsRemaining() << endl;
-		cout << "Projected Grade: " << category.getProjectedGrade() << "%" << endl;
+		cout << "Projected Grade on remaining assignments: " << category.getProjectedGrade() << "%" << endl;
 
-        cout << "------------------------------------" << endl;
+
     }
+	cout << "------------------------------------" << endl;
+	cout << "Class Predicted Grade: " <<  GradePrediction::getTotalPredictedGrade(categories) << "%" << endl;
+	cout << "------------------------------------" << endl;
 }
 
 void ConsoleManager::printCategories()
@@ -118,7 +122,7 @@ void ConsoleManager::displayCategoryDetails()
 				cout << "------------------------------------" << endl;
 				cout << counter << ". " << endl;
 				cout << "Assignment Name: " << assignment.getName() << endl;
-				cout <<  "Grade: " << assignment.getPointsAchieved() / assignment.getPointsPossible()<< "%" << endl;
+				cout <<  "Grade: " << (assignment.getPointsAchieved() / assignment.getPointsPossible()) * 100<< "%" << endl;
 				cout << "Edited: " << (assignment.getIsEdited() ? "Yes" : "No") << endl;
 				cout << "Completed: " << (assignment.getIsCompleted() ? "Yes" : "No") << endl;
 				totalPointsPossible += assignment.getPointsPossible();
@@ -128,14 +132,14 @@ void ConsoleManager::displayCategoryDetails()
 			}
 			category.setTotalPointsAchieved(totalPointsAchieved);
 			category.setTotalPointsPossible(totalPointsPossible);
-
+			cout << "------------------------------------" << endl;
 			cout << "Total points: " << category.getTotalPointsPossible() << endl;
 
 
 			break;
 		}
 	}
-	cout << "------------------------------------" << endl;
+
 	cout << endl;
 }
 

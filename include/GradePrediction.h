@@ -13,16 +13,10 @@ using namespace std;
 class GradePrediction
 {
 private:
-	vector<Category> categories;
+
 
 public:
-	void readAssignmentsFromFile(string fileName);
-	void addCategory(Category category);
-	void addAssignmentToCategory(string categoryName, Assignment assigment);
-	string getCategorySummary();
-	string getCategoryDetails(string categoryName);
-	void editAssignment(string categoryName, string assignmentName, double newScore);
-	void saveGradesToFile(string fileName);
+	static double getTotalPredictedGrade(vector<Category> categories);
 
 
 };

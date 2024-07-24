@@ -132,8 +132,35 @@ double Category::getProjectedGrade() {
 }
 
 
-double Category::getPredictedGrade() {
-	return 0;
+double Category::calculatePredictedGrade() {
+	double totalProjectedPoints = 0.0;
+	int completedAssignments = 0;
+
+	// Calculate the total points achieved and possible for completed assignments
+	for (const Assignment& assignment : assignments) {
+		if (assignment.getIsCompleted()) {
+			totalPointsAchieved += assignment.getPointsAchieved();
+			totalPointsPossible += assignment.getPointsPossible();
+			completedAssignments++;
+		}
+	}
+
+	// Calculate the average score of the completed assignments
+	double averageScore = (completedAssignments > 0) ? (totalPointsAchieved / totalPointsPossible) : 0.0;
+
+	// Calculate the projected points for remaining assignments based on the average score
+	for (Assignment& assignment : assignments) {
+		if (!assignment.getIsCompleted()) {
+			assignment.setScore(assignment.getPointsPossible() * averageScore);
+			totalProjectedPoints += assignment.getPointsAchieved();
+			totalPointsPossible += assignment.getPointsPossible();
+		} else {
+			totalProjectedPoints += assignment.getPointsAchieved();
+		}
+	}
+
+	// Return the predicted grade as a percentage
+	return (totalProjectedPoints / totalPointsPossible) * 100.0;
 }
 
 void Category::editAssignment(string assignmentName, double newScore) {

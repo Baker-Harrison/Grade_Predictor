@@ -19,6 +19,7 @@ private:
 	vector<Assignment> assignments;
 	double totalPointsAchieved = 0;
 	double totalPointsPossible = 0;
+	double predictedGrade;
 public:
     Category(string Name, double TotalWeight);
 	string getName();
@@ -31,7 +32,6 @@ public:
 	double getCurrentGrade();
 	vector<Assignment> getRemainingAssignments();
 	double getProjectedGrade();
-	double getPredictedGrade();
 	void editAssignment(string assignmentName, double newScore);
 
 	void setTotalPointsAchieved(double totalPoints);
@@ -39,6 +39,7 @@ public:
 
 	double getTotalPointsAchieved() const;
 	double getTotalPointsPossible();
+	double calculatePredictedGrade();
 };
 
 #endif //GRADE_PREDICTOR_CATEGORY_H
