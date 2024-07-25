@@ -1,16 +1,4 @@
-/Users/harrisonbaker/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug /Users/harrisonbaker/vcpkg/scripts/buildsystems/vcpkg.cmake -G "CodeBlocks - Unix Makefiles" -S /Users/harrisonbaker/CLionProjects/Grade_Predictor -B /Users/harrisonbaker/CLionProjects/Grade_Predictor/cmake-build-debug
-CMake Warning:
-  Ignoring extra path from command line:
-
-   "/Users/harrisonbaker/vcpkg/scripts/buildsystems/vcpkg.cmake"
-
-
-CMake Warning:
-  Ignoring extra path from command line:
-
-   "/Users/harrisonbaker/vcpkg/scripts/buildsystems/vcpkg.cmake"
-
-
+"C:\Program Files\JetBrains\CLion 2023.3.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=C:/Users/thehe/vcpkg/scripts/buildsystems/vcpkg.cmake -G "CodeBlocks - MinGW Makefiles" -S C:\Users\thehe\CLionProjects\CPP\Grade_Predictor -B C:\Users\thehe\CLionProjects\CPP\Grade_Predictor\cmake-build-debug
 CMake Deprecation Warning:
   Support for "Extra Generators" like
 
@@ -20,6 +8,6 @@ CMake Deprecation Warning:
   use the cmake-file-api(7) to view CMake-generated project build trees.
 
 
--- Configuring done (0.0s)
+-- Configuring done (0.2s)
 -- Generating done (0.0s)
--- Build files have been written to: /Users/harrisonbaker/CLionProjects/Grade_Predictor/cmake-build-debug
+-- Build files have been written to: C:/Users/thehe/CLionProjects/CPP/Grade_Predictor/cmake-build-debug

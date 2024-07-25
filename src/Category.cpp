@@ -61,20 +61,6 @@ void Category::addAssignment(Assignment assignment) {
     assignments.push_back(assignment);
 }
 
-vector<Assignment> Category::getCompletedAssignments() {
-	vector<Assignment> completedAssignments;
-
-	for (Assignment assignment : assignments)
-	{
-		if (assignment.getIsCompleted())
-		{
-			completedAssignments.push_back(assignment);
-		}
-	}
-
-	return completedAssignments;
-}
-
 double Category::getCurrentGrade() {
 	for (Assignment assignment : assignments)
 	{
@@ -82,20 +68,6 @@ double Category::getCurrentGrade() {
 		totalPointsPossible += assignment.getPointsPossible();
 	}
 	return (totalPointsAchieved / totalPointsPossible) * 100;
-}
-
-vector<Assignment> Category::getRemainingAssignments() {
-	vector<Assignment> remainingAssignments;
-
-	for (Assignment assignment : assignments)
-	{
-		if (!assignment.getIsCompleted())
-		{
-			remainingAssignments.push_back(assignment);
-		}
-	}
-
-	return remainingAssignments;
 }
 
 double Category::getProjectedGrade() {
@@ -160,16 +132,10 @@ double Category::calculatePredictedGrade() {
 	}
 
 	// Return the predicted grade as a percentage
-	if (totalProjectedPoints / totalPointsPossible* 100.0 == NAN)
-	{
-		return 0.0;
-	}
+
+
 
 	return (totalProjectedPoints / totalPointsPossible) * 100.0;
-}
-
-void Category::editAssignment(string assignmentName, double newScore) {
-
 }
 
 
@@ -181,10 +147,7 @@ void Category::setTotalPointsPossible(double totalPoints)
 {
 	totalPointsPossible = totalPoints;
 }
-double Category::getTotalPointsAchieved() const
-{
-	return totalPointsAchieved;
-}
+
 double Category::getTotalPointsPossible()
 {
 	return totalPointsPossible;

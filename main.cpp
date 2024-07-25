@@ -1,4 +1,4 @@
-#include <iostream>
+
 #include "include/ConsoleManager.h"
 
 using namespace std;

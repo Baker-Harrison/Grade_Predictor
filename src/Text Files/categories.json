@@ -39,7 +39,7 @@
                 {
                     "isCompleted": true,
                     "isEdited": true,
-                    "name": "Final",
+                    "name": "Exam1",
                     "pointsAchieved": 100.0,
                     "pointsPossible": 100.0
                 },
@@ -53,9 +53,23 @@
                 {
                     "isCompleted": true,
                     "isEdited": true,
-                    "name": "none",
+                    "name": "Exam4",
                     "pointsAchieved": 90.0,
                     "pointsPossible": 100.0
+                },
+                {
+                    "isCompleted": true,
+                    "isEdited": true,
+                    "name": "Exam3",
+                    "pointsAchieved": 100.0,
+                    "pointsPossible": 100.0
+                },
+                {
+                    "isCompleted": true,
+                    "isEdited": true,
+                    "name": "Final",
+                    "pointsAchieved": 190.0,
+                    "pointsPossible": 200.0
                 }
             ],
             "name": "Exams",

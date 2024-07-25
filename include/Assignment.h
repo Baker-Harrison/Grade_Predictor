@@ -24,7 +24,7 @@ public:
 	double getScore() const;
 	bool getIsCompleted() const;
 	bool getIsEdited() const;
-
+    double getGrade() const;
 
 
 

@@ -30,6 +30,11 @@ double Assignment::getScore() const {
 	return pointsAchieved;
 }
 
+double Assignment::getGrade() const
+{
+    return (pointsAchieved / pointsPossible) * 100;
+}
+
 bool Assignment::getIsCompleted() const
 {
     return isCompleted;

@@ -6,9 +6,9 @@
 
 #include "../include/ConsoleManager.h"
 #include "unistd.h"
-// include the FileeManager header file
+// include the FileManager header file
 
-#include "../include/FileManager.h"
+
 #include "../include/GradePrediction.h"
 
 
@@ -117,12 +117,12 @@ void ConsoleManager::displayCategoryDetails()
 			int counter = 1;
 			double totalPointsAchieved = 0;
 			double totalPointsPossible = 0;
-			for (Assignment assignment: category.getAssignments())
+			for (const Assignment &assignment: category.getAssignments())
 			{
 				cout << "------------------------------------" << endl;
 				cout << counter << ". " << endl;
 				cout << "Assignment Name: " << assignment.getName() << endl;
-				cout <<  "Grade: " << (assignment.getPointsAchieved() / assignment.getPointsPossible()) * 100<< "%" << endl;
+				cout <<  "Grade: " << assignment.getGrade()<< "%" << endl;
 				cout << "Edited: " << (assignment.getIsEdited() ? "Yes" : "No") << endl;
 				cout << "Completed: " << (assignment.getIsCompleted() ? "Yes" : "No") << endl;
 				totalPointsPossible += assignment.getPointsPossible();
@@ -163,12 +163,12 @@ void ConsoleManager::editAssignment()
 			cout << "------------------------------------" << endl;
 			cout << "Category Name: " << category.getName() << endl;
 			int counter = 1;
-			for (Assignment assignment: category.getAssignments())
+			for (const Assignment &assignment: category.getAssignments())
 			{
 				cout << "------------------------------------" << endl;
 				cout << counter << ". " << endl;
 				cout << "Assignment Name: " << assignment.getName() << endl;
-				cout <<  "Grade: " << assignment.getPointsAchieved() / assignment.getPointsPossible()<< "%" << endl;
+				cout <<  "Grade: " << assignment.getGrade()<< "%" << endl;
 				cout << "Edited: " << (assignment.getIsEdited() ? "Yes" : "No") << endl;
 				cout << "Completed: " << (assignment.getIsCompleted() ? "Yes" : "No") << endl;
 				counter++;
@@ -194,7 +194,9 @@ void ConsoleManager::editAssignment()
 					if (newName != "none") {
 						assignment.setName(newName);
 					}
-					else{}
+					else{
+                        newName = assignment.getName();
+                    }
 					// add an option to set complete
 					char isCompleted;
 					cout << "is the assignment completed? (y/n): ";

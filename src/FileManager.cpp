@@ -12,7 +12,7 @@ using json = nlohmann::json;
 
 
 void FileManager::addCategoryToFile(const string& FILENAME, const string& categoryName, double totalWeight) {
-	fstream file(FILENAME, ios::in | ios::out | ios::binary);
+	fstream file(FILENAME);
 	if (!file.is_open()) {
 		cout << "Failed to open file" << endl;
 		exit(0);
@@ -41,9 +41,9 @@ void FileManager::addCategoryToFile(const string& FILENAME, const string& catego
 	jsonData["categories"].push_back(newCategory);
 
 	// Move to the beginning of the file to overwrite it
-	file.clear();  // Clear EOF flag if set
+	file.clear();
 	file.seekp(0, ios::beg);
-	file << setw(4) << jsonData << endl;  // Pretty print with an indentation of 4 spaces
+	file << setw(4) << jsonData << endl;
 
 	file.close();
 }
@@ -52,7 +52,7 @@ void FileManager::addCategoryToFile(const string& FILENAME, const string& catego
 
 
 void FileManager::addAssignmentToCategory(const string& FILENAME, const string& categoryName, const Assignment& newAssignment) {
-	fstream file(FILENAME, ios::in | ios::out | ios::binary);
+	fstream file(FILENAME);
 	if (!file.is_open()) {
 		cout << "Failed to open file" << endl;
 		exit(0);
@@ -60,18 +60,18 @@ void FileManager::addAssignmentToCategory(const string& FILENAME, const string& 
 
 	json jsonData;
 
-	// Read existing data
+
 	file.seekg(0, ios::end);
 	if (file.tellg() > 0) {
 		file.seekg(0, ios::beg);
 		file >> jsonData;
 	} else {
-		// If the file is empty, initialize jsonData as an empty object
+
 		jsonData = json::object();
 		jsonData["categories"] = json::array();
 	}
 
-	// Find the target category and add the assignment
+
 	bool categoryFound = false;
 	for (auto& category : jsonData["categories"]) {
 		if (category["name"] == categoryName) {
@@ -94,10 +94,10 @@ void FileManager::addAssignmentToCategory(const string& FILENAME, const string& 
 		return;
 	}
 
-	// Move to the beginning of the file to overwrite it
-	file.clear();  // Clear EOF flag if set
+
+	file.clear();
 	file.seekp(0, ios::beg);
-	file << setw(4) << jsonData << endl;  // Pretty print with an indentation of 4 spaces
+	file << setw(4) << jsonData << endl;
 
 	file.close();
 }
@@ -173,7 +173,7 @@ void FileManager::editAssignment(std::string fileName, Category category, std::s
 	json j;
 
 	if (!inFile) {
-		std::cerr << "Unable to open file " << fileName << std::endl;
+		cout << "Unable to open file " << fileName << endl;
 		return;
 	}
 
@@ -206,17 +206,17 @@ void FileManager::editAssignment(std::string fileName, Category category, std::s
 	}
 
 	if (!foundCategory) {
-		std::cerr << "Category " << category.getName() << " not found in file " << fileName << std::endl;
+		cout << "Category " << category.getName() << " not found in file " << fileName << endl;
 		return;
 	}
 
 	if (!foundAssignment) {
-		std::cerr << "Assignment " << assignmentName << " not found in category " << category.getName() << std::endl;
+		cout << "Assignment " << assignmentName << " not found in category " << category.getName() << endl;
 		return;
 	}
 
-	std::ofstream outFile(fileName);
-	outFile << j.dump(4);  // Pretty print with 4-space indentation
+	ofstream outFile(fileName);
+	outFile << j.dump(4);
 	outFile.close();
 }
 

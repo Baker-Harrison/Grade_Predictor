@@ -4,7 +4,9 @@
 
 * Step 1: Install the json library from here https://github.com/nlohmann/json
 * Step 2: add the library to your version of this project (I don't currently know how to do it for Visual Studio)
-* Step 3: build the project.
+* Step 3: if you are using cmake, edit the cmakelists.txt file to the proper settings to work with the json library 
+* Step 4: In the FileManager.h file, edit the path to link to the json file provided in the src/TextFiles directory
+* Step 5: build the project.
 
 ### Using this app
 
@@ -34,8 +36,17 @@ between 0 and 1 because it is used to calculate the total score.
 * This exits the program.
 
 
+## Current Problems
 
-
+1. The program has to be restarted for file changes
+* Potential Solution: none at the moment
+2. The cin inputs cant have spaces in Assignment or category names
+* Potential Solution: potentially using the getline function although that using it caused other errors
+3. Predicted Grades are a bit strange as they calculate predicted grade based on the average of assignments
+* Potential Solution: none at the moment
+4. Prevent duplicate assignments and categories
+* Potential Solution: use a if to check if assignment/category already exists before creating it
+5. 
 
 
 

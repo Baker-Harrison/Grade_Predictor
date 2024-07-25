@@ -21,7 +21,9 @@ class FileManager
 
 
 public:
-    const string FILENAME = "/Users/harrisonbaker/CLionProjects/Grade_Predictor/src/Text Files/categories.json";
+
+    // Enter the path of the file below
+    const string FILENAME = "C:/Users/thehe/CLionProjects/CPP/Grade_Predictor/src/Text Files/categories2.json";
 
 
     void addCategoryToFile(const string& FILENAME, const string& categoryName, double totalWeight);
