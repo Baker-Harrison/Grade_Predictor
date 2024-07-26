@@ -46,7 +46,8 @@ between 0 and 1 because it is used to calculate the total score.
 * Potential Solution: none at the moment
 4. Prevent duplicate assignments and categories
 * Potential Solution: use a if to check if assignment/category already exists before creating it
-5. 
+5. If there are no assignments in category, then the grade is nan%
+* check if there are any assignments
 
 
 

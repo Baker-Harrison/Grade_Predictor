@@ -114,6 +114,19 @@
             ],
             "name": "Test",
             "totalWeight": 0.5
+        },
+        {
+            "assignments": [
+                {
+                    "isCompleted": true,
+                    "isEdited": true,
+                    "name": "TestAssignment",
+                    "pointsAchieved": 50.0,
+                    "pointsPossible": 50.0
+                }
+            ],
+            "name": "Test1",
+            "totalWeight": 0.3
         }
     ]
 }

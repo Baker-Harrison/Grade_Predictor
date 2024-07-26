@@ -50,25 +50,48 @@ void ConsoleManager::printCategories()
 
 void ConsoleManager::createNewCategory()
 {
-	string category;
-	double weight;
-	cout << "Enter the name for a new category";
-	cin >> category;
-	cout << "Enter a weight for the category";
-	cin >> weight;
+    bool categoryExists = true;
+    string categoryName;
+    double weight;
+    while (categoryExists) {
 
-	manager.addCategoryToFile(manager.FILENAME, category, weight);
+
+        cout << "Categories: " << endl;
+        printCategories();
+
+        cout << "Enter the name for a new category";
+        cin >> categoryName;
+        cout << "Enter a weight for the category";
+        cin >> weight;
+        categoryExists = false;
+        for (Category category : categories)
+        {
+            if (category.getName() == categoryName)
+            {
+                cout << "Category already exists" << endl;
+                categoryExists = true;
+            }
+        }
+
+    }
+	manager.addCategoryToFile(manager.FILENAME, categoryName, weight);
 
 }
 
 void ConsoleManager::createNewAssignment() {
 	string name;
 	double pointsPossible;
-
+    bool categoryExists;
 	// Get assignment name
+
+
+
 	cout << "Enter an assignment name and the points possible(separated by a space): ";
 	cin >> name >> pointsPossible;
 	cout << endl;
+
+
+
 
 	// Get points possible as a string and convert to double
 
@@ -80,7 +103,7 @@ void ConsoleManager::createNewAssignment() {
 	// Print categories and get category name
 	printCategories();
 	string categoryName;
-	cout << "Which category is this going into: ";
+	cout << "Enter name of category this is going into: ";
 	cin >> categoryName;
 
 	// Check if the category exists and add the assignment if it does
@@ -105,7 +128,7 @@ void ConsoleManager::displayCategoryDetails()
 {
 	string selection;
 	printCategories();
-	cout << "Enter a category: ";
+	cout << "Enter the name of a category: ";
 	cin >> selection;
 	cout << "------------------------------------" << endl;
 	for (Category category: categories)
@@ -153,7 +176,7 @@ void ConsoleManager::editAssignment()
 	printCategories();
 
 	string selection;
-	cout << "Enter a category: ";
+	cout << "Enter the name of a category: ";
 	cin >> selection;
 	cout << "------------------------------------" << endl;
 	for (Category category: categories)
@@ -232,26 +255,26 @@ void ConsoleManager::menu() {
 	if (selection == '1')
 	{
 		displayCategorySummary();
-		sleep(2);
+		sleep(1);
 		menu();
 	}
 	else if (selection == '2')
 	{
 		displayCategoryDetails();
-		sleep(2);
+		sleep(1);
 		menu();
 	}
 	else if (selection == '3')
 	{
 		createNewCategory();
-		sleep(2);
+		sleep(1);
 		menu();
 	}
 	else if (selection == '4')
 	{
 		// Assignment(string Name, double PointsAchieved, double PointsPossible, bool IsCompleted, bool IsEdited);
 		createNewAssignment();
-		sleep(2);
+		sleep(1);
 		menu();
 
 	}
